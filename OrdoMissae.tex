@@ -6,6 +6,7 @@
 \usepackage{lmodern}
 \usepackage{enumerate}
 \usepackage{color}
+\usepackage{graphics}
 \setlength{\parindent}{0pt}
 \selectlanguage{polish}
 \title{\textcolor{red}{Ordo Missae}}
@@ -55,12 +56,12 @@
 {\Large\bfseries} % format
 {}                % label
 {0pt}             % sep
-{\Huge}           % before-code
+{\Huge\centering}           % before-code
 \titleformat{\subsection}
 {\Large\bfseries} % format
 {}                % label
 {0pt}             % sep
-{\LARGE}           % before-code
+{\LARGE\centering}           % before-code
 \titleformat{\subsubsection}
 {\Large\bfseries} % format
 {}                % label
@@ -490,7 +491,11 @@
 		\pol{Błogosławiony, który idzie w imię Pańskie. Hosanna na wysokości.}
 	\end{parcolumns}
 	
-	
+	\clearpage
+	\begin{figure}[h]
+		\includegraphics{cross.png}
+	\end{figure}
+	\clearpage
 	\subsection{KANON MSZY ŚWIĘTEJ}
 	\rub{Modlitwy Kanonu, którego pochodzenie sięga pierwszych wieków Kościoła, odzwierciedlają dokładnie myśl Apostołów i Zbawiciela. Dlatego powinniśmy z wielką czcią i radością odmawiać z kapłanem te modlitwy, które uświęciła tak starodawna tradycja.}
 	
