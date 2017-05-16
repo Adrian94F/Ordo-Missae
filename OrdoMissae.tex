@@ -1,4 +1,4 @@
-\documentclass[8pt,titlepage]{article}
+\documentclass[8pt,titlepage]{book}
 
 \usepackage[T1]{fontenc}
 \usepackage[polish]{babel}
@@ -52,17 +52,17 @@
 \usepackage[raggedright]{titlesec}
 
 \usepackage{titlesec}
-\titleformat{\section}
+\titleformat{\chapter}
 {\Large\bfseries} % format
 {}                % label
 {0pt}             % sep
 {\Huge\centering}           % before-code
-\titleformat{\subsection}
+\titleformat{\section}
 {\Large\bfseries} % format
 {}                % label
 {0pt}             % sep
 {\LARGE\centering}           % before-code
-\titleformat{\subsubsection}
+\titleformat{\subsection}
 {\Large\bfseries} % format
 {}                % label
 {0pt}             % sep
@@ -71,20 +71,29 @@
 \usepackage{geometry}
 \newgeometry{tmargin=3cm, bmargin=3cm, lmargin=3cm, rmargin=3cm}
 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+
 \begin{document}
 	\maketitle
 	\clearpage
 	\tableofcontents
 	\clearpage
 	
-	\section{MSZA KATECHUMENÓW}
+	\clearpage
 	
-	\subsection{CZĘŚĆ PIERWSZA}
+	\clearpage
 	
-	\subsubsection{Asperges --- Aspersja}
+	\chapter{MSZA KATECHUMENÓW}
+	
+	\section{CZĘŚĆ PIERWSZA}
+	
+	\subsection{Asperges --- Aspersja}
 	\negr{(tylko w mszach uroczystych)}
 	
-	\subsubsection{Psalm wstępny}
+	\subsection{Psalm wstępny}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\rub{Kapłan stanąwszy u stopni ołtarza, żegna się znakiem krzyża i odmawia antyfonę:}
 		
@@ -121,7 +130,7 @@
 		\polW{Do Boga, który jest weselem moim od młodości}
 	\end{parcolumns}	
 	
-	\subsubsection{Confiteor --- Spowiedź powszechna}
+	\subsection{Confiteor --- Spowiedź powszechna}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\rub{Wobec Boga i Kościoła powszechnego oskarżamy się publicznie o winy nasze, abyśmy tym głębszą w sobie obudzili skruchę}
 		
@@ -197,17 +206,17 @@
 		\rub{Podczas Mszy z asystą kapłan błogosławi kadzidło i mówi:}
 		
 		\latin{Ab illo benedicaris in cuius honore cremaberis. Amen.}
-		\pol{Niechaj cię Ten błogosławi, na którego cześć spalać się będziesz}
+		\pol{Niechaj cię Ten błogosławi, na którego cześć spalać się będziesz. Amen.}
 		
 		\rub{Kadzidło, które spala się i dym unoszący się w górę są symbolem naszych modlitw i ofiar. Kapłan okadza ołtarz, następnie diakon okadza celebransa jako przedstawiciela Chrystusa. }
 	\end{parcolumns}
 	
-	\subsubsection{Introit}
+	\subsection{Introit}
 	\rub{Kapłan przechodzi na prawą stronę ołtarza i odczytuje Introit przypadający na dany dzień.}
 	
-	\subsection{CZĘŚĆ DRUGA}
+	\section{CZĘŚĆ DRUGA}
 	
-	\subsubsection{Kyrie --- błagalne wołanie}
+	\subsection{Kyrie --- błagalne wołanie}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\rub{Kyrie jest to krotka litania pochodząca z liturgii grekokatolickiej. Składa się ona z trzykrotnego wezwania o pomoc do każdej z Trzech Osób Trójcy Przenajświętszej}
 			
@@ -217,12 +226,12 @@
 		\polW{Panie, zmiłuj się.}	
 		\latinS{Kyrie eleison.}
 		\polK{Panie, zmiłuj się.}	
-		\latinS{Christe eleison.}
-		\polK{Chryste, zmiłuj się.}
 		\latinM{Christe eleison.}
-		\polW{Chryste, zmiłuj się.}	
+		\polW{Chryste, zmiłuj się.}
 		\latinS{Christe eleison.}
 		\polK{Chryste, zmiłuj się.}	
+		\latinM{Christe eleison.}
+		\polW{Chryste, zmiłuj się.}	
 		\latinS{Kyrie eleison.}
 		\polK{Panie, zmiłuj się.}
 		\latinM{Kyrie eleison.}
@@ -231,7 +240,7 @@
 		\polK{Panie, zmiłuj się.}
 	\end{parcolumns}
 	
-	\subsubsection{Gloria --- Chwała Trójcy Przenajświętszej}
+	\subsection{Gloria --- Chwała Trójcy Przenajświętszej}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\rub{Gloria jest to pieśń chwalebna i dziękczynna za wszystkie dary, których udziela nam Trójca Przenajświętsza. Pieśń te opuszcza się we Mszach odprawianych w kolorze czarnym i fioletowym, oraz zielonym w ciągu tygodnia i we Mszach wotywnych.}
 		
@@ -242,7 +251,7 @@
 	\end{parcolumns}
 
 
-	\subsubsection{Kolekta --- Modlitwa Kościelna}
+	\subsection{Kolekta --- Modlitwa Kościelna}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\rub{Kapłan całuje ołtarz, następnie pozdrawia wiernych wżywając ich do modlitwy.}
 		
@@ -263,9 +272,9 @@
 		\polW{Amen}
 	\end{parcolumns}
 	
-	\subsection{CZĘŚĆ TRZECIA}
+	\section{CZĘŚĆ TRZECIA}
 	
-	\subsubsection{Lekcja }
+	\subsection{Lekcja }
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\rub{W trzeciej części Bóg odpowiada na nasze modlitwy, pouczając nas słowem natchnionym o Sobie i o naszych względem Niego obowiązkach.\\Pierwsze czytanie jest wyjęte z Pism Starego Testamentu, lub z listów i Dziejów Apostolskich. W niektóre dni postne mamy dwie lub sześć lekcji. We Mszach z asystą Lekcja jest śpiewana przez subdiakona.\\Po skończonym czytaniu odpowiada się:}
 		
@@ -273,12 +282,12 @@
 		\polW{Bogu niech będą dzięki.}
 	\end{parcolumns}
 
-	\subsubsection{Graduał i Alleluja (względnie Traktus, Sekwencja)}
+	\subsection{Graduał i Alleluja (względnie Traktus, Sekwencja)}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\rub{Po Lekcji chór śpiewa (względnie kapłan czyta) tekst śpiewu miedzylekcyjnego zwanego Graduałem. Tekst ów jest przeważnie wyjęty z Psałterza, streszcza pobożne uczucia, jakie nam czytanie Pisma Świętego nasunęło. Alleluja --- słowo hebrajskie, oznaczające ,,śpiewajcie Panu'' --- jest okrzykiem radości płynącej z serca Kościoła Świętego na skutek dobrodziejstw Bożych.\\W dni postne Alleluja zastąpione jest przez Traktus --- czyli Psalm. W niektóre uroczystości śpiewa się również utwór rytmiczny zwany Sekwencją, np. Dies Irae, Stabat Mater, Veni Creator i inne. }
 	\end{parcolumns}
 	
-	\subsubsection{Przygotowanie do Ewangelii}
+	\subsection{Przygotowanie do Ewangelii}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\rub{Po śpiewie miedzylekcyjnym kapłan głęboko pochylony przed środkiem ołtarza modli się (Iz 6):}
 		
@@ -291,7 +300,7 @@
 		\pol{Racz, Panie, pobłogosławić. Pan niech będzie w sercu moim (twoim) i na ustach moich (twoich), abym (byś) godnie i umiejętnie głosił Ewangelię Jego. (W imię Ojca i Syna + i Ducha Świętego.) Amen.}
 	\end{parcolumns}
 
-	\subsubsection{Ewangelia}
+	\subsection{Ewangelia}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\rub{Kapłan (podczas Mszy św. z asystą diakon) przechodzi na stronę Ewangelii i czyta (względnie śpiewa) naznaczywszy poprzednio mszał, czoło, usta i piersi znakiem krzyża.\\W Ewangelii przemawia do nas sam Pan Jezus.\\Wierni wstają.}
 		
@@ -312,9 +321,9 @@
 		\polW{Chwała Tobie Chryste.}
 	\end{parcolumns}
 
-	\subsubsection{Kazanie}
+	\subsection{Kazanie}
 
-	\subsubsection{Credo --- Wyznanie wiary}
+	\subsection{Credo --- Wyznanie wiary}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\rub{Odmawia się w niedziele, święta 1 klasy, w święta Pańskie i Matki Bożej, w główne święta Apostołów i Ewangelistów, w końcu we Mszach wotywnych i uroczystościach śpiewanych.}
 		
@@ -325,11 +334,11 @@
 	\end{parcolumns}
 
 	
-	\section{MSZA WIERNYCH}
+	\chapter{MSZA WIERNYCH}
 	
-	\subsection{CZĘŚĆ PIERWSZA}
+	\section{CZĘŚĆ PIERWSZA}
 	
-	\subsubsection{Offertorium --- Ofertorium}
+	\subsection{Offertorium --- Ofertorium}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\rub{Kapłan całuje ołtarz i pozdrawia wiernych wzywając wszystkich do modlitwy.}
 		
@@ -343,7 +352,7 @@
 		\rub{Podczas ofiarowania chór śpiewa antyfonę offertorium z danego dnia. We Mszach cichych kapłan sam ją odmawia. W chwili ofiarowania oddajmy Panu Jezusowi całe nasze życie, wszystkie poczynania, troski i radości; niech On złoży te dary nasze przed Tronem Bożym w niebie.}
 	\end{parcolumns}
 
-	\subsubsection{Ofiarowanie Chleba}
+	\subsection{Ofiarowanie Chleba}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\rub{Kapłan odkrywa kielich, ministrant dzwoni. Następnie wznosząc patenę kapłan ofiarowuje chleb.}
 		
@@ -353,7 +362,7 @@
 		\rub{Czyniąc pateną znak krzyża, kapłan składa chleb na ołtarzu.}
 	\end{parcolumns}
 	
-	\subsubsection{Przygotowanie wina i wody}
+	\subsection{Przygotowanie wina i wody}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\rub{Ministranci przynoszą ampułki z winem i wodą. Kapłan przeszedłszy na stronę Lekcji wlewa do kielicha wino i kilka kropel wody, którą błogosławi (za wyjątkiem Mszy żałobnych). To połączenie wina i wody czyni na pamiątkę krwi i wody, którą spłynęła z boku Chrystusa. Woda jest też symbolem wiernych, którzy wraz z Chrystusem, głową Kościoła, są złączeni jak woda z winem i z Nim ofiarowują się Bogu Ojcu.}
 		
@@ -361,7 +370,7 @@
 		\pol{Boże, któryś godność natury ludzkiej, przedziwnie stworzył i jeszcze przedziwnej naprawił, spraw przez tę tajemnicę wody i wina, abyśmy mieli uczestnictwo w Bóstwie Tego, który raczył stać się uczestnikiem człowieczeństwa naszego, Iezus Chrystus, Syn Twój, Pan nasz, który z Tobą żyje i króluje w jedności Ducha Świętego Bóg: przez wszystkie wieki wieków. Amen.}
 	\end{parcolumns}
 	
-	\subsubsection{Ofiarowanie wina}
+	\subsection{Ofiarowanie wina}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\rub{Na środku ołtarza, kapłan podnosi kielich, a następnie czyni nim znak krzyża nad ołtarzem.}
 		
@@ -369,7 +378,7 @@
 		\pol{Ofiarujemy Ci, Panie, kielich zbawienia, Twojej żebrząc łaskawości, aby jako wonność wdzięczną wzniósł się przed oblicze Twego Boskiego Majestatu za nasze i całego świata zbawienie. Amen.}
 	\end{parcolumns}
 	
-	\subsubsection{Polecenie ofiar}
+	\subsection{Polecenie ofiar}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\rub{Kapłan pochylony odmawia modlitwę Azariasza w piecu gorejącym (Dn 3, 39-40)}
 		
@@ -382,7 +391,7 @@
 		\pol{Przyjdź, Dawco świętości, wszechmogący wiekuisty Boże, i pobłogosław (+) tę ofiarę przygotowaną dla chwały świętego Imienia Twojego.}
 	\end{parcolumns}
 
-	\subsubsection{Okadzenie (tylko w mszach uroczystych)}
+	\subsection{Okadzenie (tylko w mszach uroczystych)}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\rub{We Mszach uroczystych kapłan okadza dary ofiarne i ołtarz. Błogosławiąc kadzidło kapłan mówi:}
 		
@@ -405,7 +414,7 @@
 		\pol{Niech Pan zapali w nas ogień swej miłości i płomień wiecznego ukochania. Amen.}
 	\end{parcolumns}
 	
-	\subsubsection{Lavabo --- Umycie rąk}
+	\subsection{Lavabo --- Umycie rąk}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\rub{Ministranci przynoszą utensylia do Lavabo. Kapłan po okadzeniu lub zaraz po poleceniu ofiar przechodzi na stronę Lekcji i umywa palce rąk. Jest to przypomnienie, że należy obudzić skruchę, aby móc przystąpić do ofiary z duszą czystą.}
 		
@@ -417,7 +426,7 @@
 		\rub{,,Gloria Patri'' opuszcza się w okresie Męki Pańskiej i w Mszach żałobnych. }
 	\end{parcolumns}
 	
-	\subsubsection{Polecenie ofiar Trójcy Świętej}
+	\subsection{Polecenie ofiar Trójcy Świętej}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\rub{Kapłan pochylony na środku ołtarza, mówi:}
 		
@@ -425,7 +434,7 @@
 		\polK{Przyjmij, Trójco Święta, tę ofiarę, którą Ci składamy na pamiątkę Męki, Zmartwychwstania i Wniebowstąpienia Jezusa Chrystusa, Pana naszego, oraz na cześć Najświętszej Maryi Zawsze Dziewicy, świętego Jana Chrzciciela, świętych Apostołów Piotra i Pawła, a także tych (których szczątki są w ołtarzu) i wszystkich świętych: niech posłuży im ku chwale, nam zaś pomoże do zbawienia; niechaj ci, których ze czcią wspominamy na ziemi, raczą orędować za nami w niebie: przez tegoż Chrystusa, Pana Naszego. Amen.}
 	\end{parcolumns}
 	
-	\subsubsection{Wezwanie do modlitwy i Sekreta}
+	\subsection{Wezwanie do modlitwy i Sekreta}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\rub{Kapłan całuje ołtarz i zwraca się do wiernych prosząc o szczególne skupienie i zjednoczenie w modlitwie.}
 		
@@ -451,9 +460,9 @@
 	\end{parcolumns}
 	
 	
-	\subsection{CZĘŚĆ DRUGA}
+	\section{CZĘŚĆ DRUGA}
 	
-	\subsubsection{Prefacja czyli Przedśpiew}
+	\subsection{Prefacja czyli Przedśpiew}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\negr{Dialog przed Prefacją}
 		
@@ -478,7 +487,7 @@
 		\polK{Prawdziwie jest to godnie i sprawiedliwie, słusznie i zbawiennie, abyśmy zawsze i wszędzie dzięki Tobie czynili, Panie święty, Ojcze wszechmogący, wiekuisty Boże; Ty z jednorodzonym Synem Twoim i Duchem Świętym jeden jesteś Bóg, jeden Pan, nie jednością jedynej osoby, ale w trzech Osobach jednej Istoty. Co bowiem z objawienia Twego wierzymy o Twojej chwale, toż o Synu, to i o Duchu Świętym, bez żadnej różnicy utrzymujemy; tak, iż wyznając prawdziwie i wiekuiste Bóstwo, wielbimy Osób odrębność, w Istocie jedność i równość w Majestacie. Co też wychwalają Aniołowie i Archaniołowie, Cherubiny i Serafiny, którzy nie przestają wołać codziennie, mówiąc jednogłośnie:}
 	\end{parcolumns}
 	
-	\subsubsection{Sanctus --- Święty}
+	\subsection{Sanctus --- Święty}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\rub{Kapłan pochyla się i mówi, a ministrant trzykroć dzwoni}
 		
@@ -492,14 +501,15 @@
 	\end{parcolumns}
 	
 	\clearpage
+	
 	\begin{figure}[h]
 		\includegraphics{cross.png}
 	\end{figure}
 	\clearpage
-	\subsection{KANON MSZY ŚWIĘTEJ}
+	\section{KANON MSZY ŚWIĘTEJ}
 	\rub{Modlitwy Kanonu, którego pochodzenie sięga pierwszych wieków Kościoła, odzwierciedlają dokładnie myśl Apostołów i Zbawiciela. Dlatego powinniśmy z wielką czcią i radością odmawiać z kapłanem te modlitwy, które uświęciła tak starodawna tradycja.}
 	
-	\subsubsection{(Pierwsza) modlitwa wstawiennicza}
+	\subsection{(Pierwsza) modlitwa wstawiennicza}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\rub{Kapłan ogólnie poleciwszy ofiarę wstawia się (a) za cały Kościół wojujący (b) za biorących udział w Ofierze (c) w łączności z Kościołem tryumfującym. "Naprzód należy polecić ofiary i wtedy wygłosić imiona tych, których należy" (św. Innocenty I 417). Imiona odczytywano z tabliczek zwanych dyptychami. Wypisywano na nich imiona żywych i umarłych, których polecano modlitwom wiernych, oraz imiona świętych, których przy ofierze w dniu danym wspominano.}
 		
@@ -524,7 +534,7 @@
 		\polK{W świętym obcowaniu, ze czcią wspominamy przede wszystkim wsławioną zawsze Dziewicę Maryję, Rodzicę Boga, Pana naszego, Jezusa Chrystusa, a także Świętych Apostołów i Męczenników Twoich: (Apostołów) Piotra i Pawła, Andrzeja, Jakuba Jana, Tomasza, Jakuba, Filipa, Bartłomieja, Mateusza, Szymona, i Tadeusza, (Papieży) Linusa, Kleta, Klemensa, Ksystusa, Korneliusza, (Męczenników Cypriana, Wawrzyńca, Chryzogona, Jana i Pawła, Kosmę i Damiana, i wszystkich Świętych Twoich: racz dla ich zasług i modlitw wspierać nas w każdej potrzebie pomocą Swojej opieki. Przez tegoż Chrystusa, Pana naszego. Amen.}
 	\end{parcolumns}
 	
-	\subsubsection{Hanc Igitur --- prośba o przyjęcie ofiary}
+	\subsection{Hanc Igitur --- prośba o przyjęcie ofiary}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\rub{Kapłan wyciąga dłonie nad Hostią i kielichem, a gdy zaczyna błogosławić, ministrant dzwoni, wierni klękają.}
 		
@@ -532,7 +542,7 @@
 		\pol{Prosimy Cię przeto, Panie, abyś tę ofiarę sług Twoich i całej rodziny Twojej miłościwie przyjął, dni życia naszego w pokoju swym ustalił i zechciał od wiecznego potępienia nas wybawić i zaliczyć w poczet wybranych Twoich. Przez Chrystusa, Pana naszego. Amen.}
 	\end{parcolumns}
 	
-	\subsubsection{Quam Oblationem --- Prośba o przeistoczenie}
+	\subsection{Quam Oblationem --- Prośba o przeistoczenie}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\rub{Kulminacyjnym punktem w Ofierze Mszy Świętej jest przeistoczenie chleba i wina w Ciało i Krew Pańską. Ofiara, które się spełnia na ołtarzu, jest tą ofiarą, która się dokonała na Kalwarii. Ten sam Kapłan i Ofiara ta sama. Wzbudźmy w sobie wiarę w obecność Chrystusa pod postaciami chleba i wina mówiąc po cichu, podczas podniesienia słowa św. Tomasza: Pan Bóg i Bóg mój. (7 lat odp. dla tych, co mówią codzień odp. zup. raz na tydzień pod zwykłymi warunkami. S. Pen. 26, I, 1937)}
 		
@@ -540,7 +550,7 @@
 		\pol{Wsród wszystkich ofiar, prosimy Cię, Ty Boże, racz te pobło+gosławić, u+znać, za+twierdzić, prawdziwą i miłą sobie uczynić, tak, żeby stała się dla nas Cia+łem i Krwią (+) najmilszego Syna Twojego, Pana naszego, Jezusa Chrystusa.}
 	\end{parcolumns}
 	
-	\subsubsection{Konsekracja chleba}
+	\subsection{Konsekracja chleba}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\rub{Kapłan bierze do rak Hostię}
 		
@@ -555,7 +565,7 @@
 		\rub{Gdy kapłan podnosi Hostię Najświętszą, ministrant dzwoni, a wierni adorują w ciszy.}
 	\end{parcolumns}
 	
-	\subsubsection{Konsekracja wina}
+	\subsection{Konsekracja wina}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\rub{Kapłan bierze do rąk Kielich.}
 		
@@ -573,7 +583,7 @@
 		\rub{Gdy kapłan podnosi kielich, ministrant dzwoni. Wierni adorują w ciszy Krew Przenajświętszą}
 	\end{parcolumns}
 	
-	\subsubsection{Unde Et Memores --- Wspomnienie Tajemnicy Odkupienia (Anamneza)}
+	\subsection{Unde Et Memores --- Wspomnienie Tajemnicy Odkupienia (Anamneza)}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\rub{Pamiątka Chrystusa, to nie tylko czcze wspomnienie, ale rzeczywiste uobecnienie całej Tajemnicy Odkupienia --- co też podkreśla natychmiast kapłan w następnej modlitwie zwanej "anamneza" czyli "wspomnienie".}
 		
@@ -581,7 +591,7 @@
 		\polK{Przeto i my słudzy Twoi, Panie, oraz lud Twój święty, wspominając tak błogosławioną Mękę, jak też i Zmartwychwstanie z otchłani i chwalebne Wniebowstąpienie tegoż Chrystusa, Syna Twojego, Pana naszego, ofiarujemy przedostojnemu Majestatowi Twojemu, z darów i dobrodziejstw Twoich, Hostię (+) czystą, Hostię (+) świetą, Hostię (+) Niepokalaną, Chleb (+) święty wiekuistego życia i Kielich (+) zbawienia wiecznego.}
 	\end{parcolumns}
 	
-	\subsubsection{Supra Quae --- Modlitwa o przyjęcie Ofiary bezkrwawej}
+	\subsection{Supra Quae --- Modlitwa o przyjęcie Ofiary bezkrwawej}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\rub{Bóg łaskawie przyjął ofiary Starego Zakonu, które były tylko figurą Ofiary Chrystusa; o ile bardziej przychylnie raczy wejrzeć na ofiarę Nowego Przymierza.}
 		
@@ -589,7 +599,7 @@
 		\polK{Racz na nie wejrzeć przejednanym i łaskawym obliczem i przyjąć je tak mile, jak mile przyjąć raczyłeś dary sprawiedliwego sługi Twego Abla i ofiarę Patryjarchy naszego Abrahama i tę, którą Ci złożył najwyższy Twój Kapłan Melchizedek, ofiarę świętą, hostię niepokalaną.}
 	\end{parcolumns}
 	
-	\subsubsection{Druga modlitwa wstawiennicza}
+	\subsection{Druga modlitwa wstawiennicza}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\rub{Kapłan pochylony nad ołtarzem, modli się o łaski dla uczestników Ofiary. Owym aniołem, który ma ofiarę przedstawić jest sam Chrystus. Według innych jest nim Duch Święty lub jakiś anioł ofiarnik. }
 		
@@ -611,7 +621,7 @@
 		\pol{Nam także, grzesznym sługom Twoim, którzy pokładamy nadzieję w mnóstwie litości Twojej, racz dać jakiś udział i obcowanie ze świętymi Twoimi Apostołami i Męczennikami: Janem (Chrzcicielem), Szczepanem (Diakonem), Maciejem (Apostołem), Barnabą, Ignacym (Biskupem) Aleksandrem, Marcelinem, Piotrem, (Męczennice) Felicytą, Perpetuą, Agatą, Łucją, Agnieszką, Cecylią, Anastazją, i całym gronem Twych Świętych; dopuść nas, prosimy, do ich współdziedzictwa, nie z naszych zasług biorąc miarę, lecz przebaczeniem obdarzając Przez Chrystusa, Pana naszego.}
 	\end{parcolumns}
 	
-	\subsubsection{Zakończenie}
+	\subsection{Zakończenie}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\latin{Per quem haec omnia, Domine, semper bona creas, sanctificas (+), vivificas (+), benedicis (+) et praestas nobis.}
 		\pol{Przez Niego, Panie, te wszystkie dary zawsze dobrymi stwarzasz, uswię+casz, oży+wiasz, błogo+sławisz i nam ich udzielasz.}
@@ -627,9 +637,9 @@
 	\end{parcolumns}
 	
 	
-	\subsection{CZĘŚĆ TRZECIA}
+	\section{CZĘŚĆ TRZECIA}
 	
-	\subsubsection{Pater Noster --- Modlitwa Pańska}
+	\subsection{Pater Noster --- Modlitwa Pańska}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\rub{Teraz po złożeniu Ofiary, następuje uczta. W odpowiedzi na nasze dary, prośby i błagania Bóg udzieli nam pokarmu świętego, w którym są zawarte wszystkie łaski i dobrodziejstwa, bo pokarm ten, to sam Pan Jezus pod postaciami chleba i wina. Jest to stwierdzenie, ze Bóg nas wysłuchał i chce nam dopomóc, jako swym dzieciom. Jako przygotowanie do Komunii św. odmówmy z głębi serca "Ojcze nasz" i prośmy Pana Jezusa, aby to Jego Ciało, które spożywać będziemy, stało się nam lekarstwem dla duszy i ciała.}
 		
@@ -648,7 +658,7 @@
 		\pol{Wybaw nas, prosimy Cię, Panie od wszelkich nieszczęść przeszłych, obecnych i przyszłych, a za przyczyną Najświętszej i chwalebnej zawsze Dziewicy, Bogarodzicy Maryi, świętych Apostołów Twoich Piotra i Pawła, oraz Andrzeja i wszystkich Świętych, udziel nam miłościwie pokoju za dni naszych, abyśmy wsparci pomocą miłosierdzia Twego i od grzechu byli zawsze wolni i od wszelkiej trwogi bezpieczni. Przez tegoż Pana naszego Jezusa Chrystusa, Syna Twojego, który z Tobą żyje i króluje w jedności Ducha Świętego Bóg, przez wszystkie wieki wieków. Amen. }
 	\end{parcolumns}
 	
-	\subsubsection{Łamanie Chleba i modły o pokój}
+	\subsection{Łamanie Chleba i modły o pokój}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\rub{Obrzęd Łamania Chleba jest również symbolem gwałtownej śmierci Chrystusa, połączenie zaś Hostii z Krwią wskazuje na Jego zmartwychwstanie. Pierwszym owocem Eucharystii jest pokój, czyli jedność z Bogiem i jedność między nami.}
 		
@@ -674,7 +684,7 @@
 		\polK{Baranku Boży, który gładzisz grzechy świata, zmiłuj się nad nami.\\Baranku Boży, który gładzisz grzechy świata, zmiłuj się nad nami.\\Baranku Boży, który gładzisz grzechy świata, obdarz nas pokojem.}
 	\end{parcolumns}
 	
-	\subsubsection{Modlitwy przed Komunią}
+	\subsection{Modlitwy przed Komunią}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\rub{Następują trzy ciche prywatne modlitwy kapłana, pięknie przypominające skutki, jakie Komunia ma spowodować w duszach naszych: pokój, uzdrowienie, łaskę Bożą. Opieramy się w tej chwili na zasługach Chrystusa i wierze Kościoła.}
 		
@@ -694,7 +704,7 @@
 		\pol{Przyjęcie Ciała Twego, Panie Jezu Chryste, które ja, niegodny sługa, spożywać się ważę, niechaj mi się nie obróci na sąd i potępienie, lecz niechaj raczej posłuży mi ku obronie i uzdrowieniu duszy i ciała: który żyjesz i królujesz z Bogiem Ojcem w jedności Ducha Świętego Bóg, przez wszystkie wieki wieków. Amen.}
 	\end{parcolumns}
 	
-	\subsubsection{Komunia kapłana}
+	\subsection{Komunia kapłana}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\rub{Kapłan przyklęka, bierze do rąk Hostię św., aby ją przyjąć i mówi:}
 		
@@ -717,7 +727,7 @@
 		\pol{Cóż zwrócę Panu za wszystko, co dla mnie uczynił; Kielich zbawienia wezmę i wezwę Imienia Pana. Wielbiąc zawołam do Pana i od nieprzyjaciół moich będę ocalony.\\Krew Pana naszego Jezusa Chrystusa niechaj strzeże duszy mojej na żywot wieczny. Amen.}
 	\end{parcolumns}
 	
-	\subsubsection{Komunia wiernych}
+	\subsection{Komunia wiernych}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\rub{Kapłan zwraca się do wiernych z Cyborium i trzymając Hostię Świętą, mówi:}
 		
@@ -737,7 +747,7 @@
 		\rub{Gdy wszyscy otrzymali Komunie Świętą, kapłan powraca na ołtarz i umieszcza Cyborium w Tabernakulum. }
 	\end{parcolumns}
 	
-	\subsubsection{Dziękczynienie}
+	\subsection{Dziękczynienie}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\rub{Po czym ministrant bierze ampułki i nalewa wina do kielicha. Kapłan modli się:}
 		
@@ -752,10 +762,10 @@
 		\rub{Kapłan wyciera kielich i przykrywa go welonem. --- Ministrant przenosi Mszał. }
 	\end{parcolumns}
 	
-	\subsubsection{Communio --- Śpiew przy Komunii}
+	\subsection{Communio --- Śpiew przy Komunii}
 	\rub{Po czym kapłan przechodzi na stronę Lekcji i odczytuje Komunię.}
 	
-	\subsubsection{Postcommunio --- Modlitwy po Komunii}
+	\subsection{Postcommunio --- Modlitwy po Komunii}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\latinS{Dominus vobiscum.}
 		\polK{Pan z wami.}
@@ -783,7 +793,7 @@
 		\polW{Bogu niech będą dzięki.}
 	\end{parcolumns}
 	
-	\subsubsection{Placeat Tibi --- Ostatnia modlitwa}
+	\subsection{Placeat Tibi --- Ostatnia modlitwa}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\rub{Pochylając się nad ołtarzem, kapłan mówi:}
 		
@@ -800,7 +810,7 @@
 		\polW{Amen.}
 	\end{parcolumns}
 	
-	\subsubsection{Ostatnia Ewangelia}
+	\subsection{Ostatnia Ewangelia}
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\rub{Kapłan przechodzi na stronę Ewangelii. Czyni znak krzyża najpierw na ołtarzu, potem na swym czole, ustach i sercu.}
 		
@@ -822,7 +832,7 @@
 	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
 		\textit{Przez Ojca Św. Leona XIII przepisane}
 		
-		\textit{\rub{Po cichej Mszy Św., kapłan klęcząc u stopni ołtarza, mówi z wiernymi poniższe modlitwy. Zaleca się wiernym samodzielne odmawianie tych modlitw także po Mszach Św. uroczystych.}}
+		\rub{Po cichej Mszy Św., kapłan klęcząc u stopni ołtarza, mówi z wiernymi poniższe modlitwy. Zaleca się wiernym samodzielne odmawianie tych modlitw także po Mszach Św. uroczystych.}
 		
 		\negr{Salutatio Angelica --- Pozdrowienie Anielskie}
 		
