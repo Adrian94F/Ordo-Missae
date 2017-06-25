@@ -1,4 +1,4 @@
-\documentclass[8pt,titlepage]{book}
+\documentclass[12pt,titlepage]{book}
 
 \usepackage[T1]{fontenc}
 \usepackage[polish]{babel}
@@ -35,6 +35,7 @@
 }
 
 \usepackage{parcolumns}
+\newenvironment{clsLt}{ \begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2} }{ \end{parcolumns} }
 \newcommand{\latinS}[1]{\colchunk{\begin{myDescr}\item[\textbf{S.}]{#1}\end{myDescr}}}
 \newcommand{\latinM}[1]{\colchunk{\begin{myDescr}\item[\textbf{M.}]{#1}\end{myDescr}}}
 \newcommand{\latinV}[1]{\colchunk{\begin{myDescr}\item[\textbf{V.}]{#1}\end{myDescr}}}
@@ -46,8 +47,8 @@
 \newcommand{\polK}[1]{\colchunk{\begin{myDescr}\item[\textbf{K.}]{#1}\end{myDescr}}\colplacechunks}
 \newcommand{\polW}[1]{\colchunk{\begin{myDescr}\item[\textbf{W.}]{#1}\end{myDescr}}\colplacechunks}
 
-\newcommand{\rub}[1]{\textcolor{red}{#1}}
-\newcommand{\negr}[1]{\textbf{#1}}
+\newcommand{\rub}[1]{\textcolor{red}{\\#1}}
+\newcommand{\negr}[1]{\textbf{\\#1}}
 
 \usepackage[raggedright]{titlesec}
 
@@ -69,22 +70,25 @@
 {\Large}           % before-code
 
 \usepackage{geometry}
-\newgeometry{tmargin=3cm, bmargin=3cm, lmargin=3cm, rmargin=3cm}
+\newgeometry{tmargin=2.5cm, bmargin=2.5cm, lmargin=2.5cm, rmargin=2.5cm}
 
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
 
+\newcommand*\cleartoleftpage{%
+	\clearpage
+	\ifodd\value{page}\hbox{}\newpage\fi
+}
+
 \begin{document}
 	\maketitle
 	\clearpage
 	\tableofcontents
 	\clearpage
-	
-	\clearpage
-	
-	\clearpage
+	\null
+	\cleardoublepage
 	
 	\chapter{MSZA KATECHUMENÓW}
 	
@@ -94,12 +98,12 @@
 	\negr{(tylko w mszach uroczystych)}
 	
 	\subsection{Psalm wstępny}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\rub{Kapłan stanąwszy u stopni ołtarza, żegna się znakiem krzyża i odmawia antyfonę:}
 		
 		\latinS{In nomine Patris, (+) et Filii, et Spiritus Sancti. Amen.\\Introibo ad altare Dei.}
 		\polK{W imię Ojca + i Syna i Ducha Świętego. Amen.\\Przystąpię do ołtarza Bożego.}
-		\latinM{Ad deum qui laetificat iuventutem meam.}
+		\latinM{Ad deum qui laetificat iuventutem \\meam.}
 		\polW{Do Boga, który jest weselem moim od młodości.}
 
 		\negr{Psalm 42}
@@ -128,10 +132,10 @@
 		\polK{Przystąpię do ołtarza Bożego}
 		\latinM{Ad Deum qui laetificat iuventutem meam.}
 		\polW{Do Boga, który jest weselem moim od młodości}
-	\end{parcolumns}	
+	\end{clsLt}	
 	
 	\subsection{Confiteor --- Spowiedź powszechna}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\rub{Wobec Boga i Kościoła powszechnego oskarżamy się publicznie o winy nasze, abyśmy tym głębszą w sobie obudzili skruchę}
 		
 		\latinS{Adiutorium nostrum (+) in nomine Domini.}
@@ -142,7 +146,7 @@
 		\rub{Kapłan głęboko pochylony odmawia spowiedź ogólną}
 	
 		\latinS{Confiteor Deo omnipotenti, beatae Mariae semper Virgini, beato Michaeli Archangelo, beato Ioanni Baptistae, sanctis Apostolis Petro et Paulo, omnibus Sanctis et vobis fratres, quia peccavi nimis cogitatione, verbo, et opere: mea culpa, mea culpa, mea maxima culpa. Ideo precor beatam Mariam semper Virginem, beatum Michaelem Archangelum, beatum Ioannem Baptistam, sanctos Apostolos Petrum et Paulum, omnes Sanctos, et vos fratres, orare pro me ad Dominum Deum nostrum.}
-		\polK{Spowiadam się Bogu wszechmogącemu, Najświętszej Maryi zawsze Dziewicy, świętemu Michałowi Archaniołowi, świętemu Janowi Chrzcicielowi, świętym Apostołom Piotrowi i Pawłowi, wszystkim Świętym i wam, bracia, że bardzo zgrzeszyłem, myślą, mową i uczynkiem: Ksiądz uderza się trzykroć w piersi moja wina, moja wina, moja bardzo wielka wina. Przeto błagam Najświętszą Maryję zawsze Dziewicę, świętego Michała Archanioła, świętego Jana Chrzciciela, świętych Apostołów Piotra i Pawła, wszystkich świętych, i was, bracia, abyście się za mnie modlili do Pana Boga naszego.}
+		\polK{Spowiadam się Bogu wszechmogącemu, Najświętszej Maryi zawsze Dziewicy, świętemu Michałowi Archaniołowi, świętemu Janowi Chrzcicielowi, świętym Apostołom Piotrowi i Pawłowi, wszystkim Świętym i wam, bracia, że bardzo zgrzeszyłem, myślą, mową i uczynkiem: moja wina, moja wina, moja bardzo wielka wina. Przeto błagam Najświętszą Maryję zawsze Dziewicę, świętego Michała Archanioła, świętego Jana Chrzciciela, świętych Apostołów Piotra i Pawła, wszystkich świętych, i was, bracia, abyście się za mnie modlili do Pana Boga naszego.}
 	
 		\rub{Ministrant i wierni proszą za kapłanem}
 	
@@ -209,7 +213,7 @@
 		\pol{Niechaj cię Ten błogosławi, na którego cześć spalać się będziesz. Amen.}
 		
 		\rub{Kadzidło, które spala się i dym unoszący się w górę są symbolem naszych modlitw i ofiar. Kapłan okadza ołtarz, następnie diakon okadza celebransa jako przedstawiciela Chrystusa. }
-	\end{parcolumns}
+	\end{clsLt}
 	
 	\subsection{Introit}
 	\rub{Kapłan przechodzi na prawą stronę ołtarza i odczytuje Introit przypadający na dany dzień.}
@@ -218,7 +222,7 @@
 	\section{CZĘŚĆ DRUGA}
 	
 	\subsection{Kyrie --- błagalne wołanie}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\rub{Kyrie jest to krotka litania pochodząca z liturgii grekokatolickiej. Składa się ona z trzykrotnego wezwania o pomoc do każdej z Trzech Osób Trójcy Przenajświętszej}
 			
 		\latinS{Kyrie eleison.}
@@ -239,21 +243,21 @@
 		\polW{Panie, zmiłuj się.}	
 		\latinS{Kyrie eleison.}
 		\polK{Panie, zmiłuj się.}
-	\end{parcolumns}
+	\end{clsLt}
 	
 	\subsection{Gloria --- Chwała Trójcy Przenajświętszej}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\rub{Gloria jest to pieśń chwalebna i dziękczynna za wszystkie dary, których udziela nam Trójca Przenajświętsza. Pieśń te opuszcza się we Mszach odprawianych w kolorze czarnym i fioletowym, oraz zielonym w ciągu tygodnia i we Mszach wotywnych.}
 		
 		\latinS{Gloria in excelsis Deo.}
 		\polK{Chwała na wysokości Bogu.}
 		\latinM{Et in terra pax hominibus bonae voluntatis. * Laudamus te. * Benedecicimus te. * Adoramus te. * Glorificamus te.* Gratias agimus tibi propter magnam gloriam tuam. Domine Deus, Rex caelestis, * Deus Pater omnipotens. Domine Fili unigenite, Iesu Christe. * Domine Deus, Agnus Dei, Filius Patris. * Qui tollis peccata mundi, * miserere nobis. * Qui tollis peccata mundi, * suscipe deprecationem nostram. * Qui sedes ad dexteram Patris, miserere nobis. * Quoniam tu solus Sanctus. * Tu solus Dominus.* Tu solus Altissimus, Iesu Christe. Cum Sancto Spiritu (+) in gloria Dei Patris. Amen.}
 		\polW{A na ziemi pokój ludziom dobrej woli. * Chwalimy Cię * Błogosławimy Cię * Wielbimy Cię * Wysławiamy Cię * Dzięki Ci składamy, bo wielka jest chwała Twoja. Panie Boże, Królu Niebios, * Boże, Ojcze wszechmogący Panie Synu Jednorodzony, Jezu Chryste. * Panie Boże, Baranku Boży * Który gładzisz grzechy świata, * przyjm błagania nasze. * Który siedzisz po prawicy Ojca, zmiłuj się nad nami. * Albowiem tylko Tyś sam jeden święty * Tylko Tyś jest Panem. * Tylko Tyś najwyższy, Jezu Chryste. Z Duchem Świętym (+) w chwale Boga Ojca. Amen.}
-	\end{parcolumns}
+	\end{clsLt}
 
 
 	\subsection{Kolekta --- Modlitwa Kościelna}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\rub{Kapłan całuje ołtarz, następnie pozdrawia wiernych wżywając ich do modlitwy.}
 		
 		\latinS{Dominus vobiscum.}
@@ -271,26 +275,26 @@
 		\polK{Przez wszystkie wieki wieków. }
 		\latinM{Amen}
 		\polW{Amen}
-	\end{parcolumns}
+	\end{clsLt}
 	
 	\cleardoublepage
 	\section{CZĘŚĆ TRZECIA}
 	
 	\subsection{Lekcja }
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\rub{W trzeciej części Bóg odpowiada na nasze modlitwy, pouczając nas słowem natchnionym o Sobie i o naszych względem Niego obowiązkach.\\Pierwsze czytanie jest wyjęte z Pism Starego Testamentu, lub z listów i Dziejów Apostolskich. W niektóre dni postne mamy dwie lub sześć lekcji. We Mszach z asystą Lekcja jest śpiewana przez subdiakona.\\Po skończonym czytaniu odpowiada się:}
 		
 		\latinM{Deo gratias.}
 		\polW{Bogu niech będą dzięki.}
-	\end{parcolumns}
+	\end{clsLt}
 
 	\subsection{Graduał i Alleluja (względnie Traktus, Sekwencja)}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\rub{Po Lekcji chór śpiewa (względnie kapłan czyta) tekst śpiewu miedzylekcyjnego zwanego Graduałem. Tekst ów jest przeważnie wyjęty z Psałterza, streszcza pobożne uczucia, jakie nam czytanie Pisma Świętego nasunęło. Alleluja --- słowo hebrajskie, oznaczające ,,śpiewajcie Panu'' --- jest okrzykiem radości płynącej z serca Kościoła Świętego na skutek dobrodziejstw Bożych.\\W dni postne Alleluja zastąpione jest przez Traktus --- czyli Psalm. W niektóre uroczystości śpiewa się również utwór rytmiczny zwany Sekwencją, np. Dies Irae, Stabat Mater, Veni Creator i inne. }
-	\end{parcolumns}
+	\end{clsLt}
 	
 	\subsection{Przygotowanie do Ewangelii}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\rub{Po śpiewie miedzylekcyjnym kapłan głęboko pochylony przed środkiem ołtarza modli się (Iz 6):}
 		
 		\latin{Munda cor meum, ac labia mea, omnipotens Deus, qui labia Isaiae Prophetae calculo mundasti ignito: ita me tua grata miseratione dignare mundare, ut sanctum Evangelium tuum digne valeam nuntiare. Per Christum Dominum nostrum. Amen.}
@@ -300,10 +304,10 @@
 		
 		\latin{Jube, domne (Domine) benedicere. Dominus sit in corde meo (tuo) et in labiis meis (tuis): ut digne et competenter annuntiem (annunties) Evangelium suum (in nomine Patris, et Filii, + et Spiritus Sancti). Amen.}
 		\pol{Racz, Panie, pobłogosławić. Pan niech będzie w sercu moim (twoim) i na ustach moich (twoich), abym (byś) godnie i umiejętnie głosił Ewangelię Jego. (W imię Ojca i Syna + i Ducha Świętego.) Amen.}
-	\end{parcolumns}
+	\end{clsLt}
 
 	\subsection{Ewangelia}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\rub{Kapłan (podczas Mszy św. z asystą diakon) przechodzi na stronę Ewangelii i czyta (względnie śpiewa) naznaczywszy poprzednio mszał, czoło, usta i piersi znakiem krzyża.\\W Ewangelii przemawia do nas sam Pan Jezus.\\Wierni wstają.}
 		
 		\latinS{Dominus vobiscum. }
@@ -321,19 +325,19 @@
 		\pol{Niech słowa Ewangelii zgłaszą nasze grzechy.}
 		\latinM{Laus tibi, Christe.}
 		\polW{Chwała Tobie Chryste.}
-	\end{parcolumns}
+	\end{clsLt}
 
 	\subsection{Kazanie}
 
 	\subsection{Credo --- Wyznanie wiary}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\rub{Odmawia się w niedziele, święta 1 klasy, w święta Pańskie i Matki Bożej, w główne święta Apostołów i Ewangelistów, w końcu we Mszach wotywnych i uroczystościach śpiewanych.}
 		
 		\latinS{Credo in unum Deum:}
 		\polK{Wierzę w jednego Boga,}
 		\latinM{Patrem omnipotentem, factorem caeli et terrae, * visibilium omnium et invisibilium. * Et in unum Dominum, Iesum Christum, Filium Dei unigenitum. * Et ex Patre natum ante omnia saecula. * Deum de Deo, lumen de lumine, Deum verum de Deo vero. * Genitum non factum, consubstantialem Patri: per quem omnia facta sunt. Qui propter nos homines, et propter nostram salutem descendit de caelis. * (PRZYKLEKNĄĆ) ET INCARNATUS EST DE SPIRITU SANCTO EX MARIA VIRGINE: ET HOMO FACTUS EST. * Crucifixus etiam pro nobis: sub Pontio Pilato passus, et sepultus est. * Et resurrexit tertia die, secundum Scripturas. Et ascendit in caelum: sedet ad dexteram Patris. * Et iterum venturus est cum gloria iudicare vivos, et mortuos: cuius regni non erit finis. * Et in Spiritum Sanctum, Dominum et vivificantem: * Qui ex Patre Filioque procedit. * Qui cum Patre et Filio simul adoratur, et conglorificatur: qui locutus est per Prophetas. * Et unam, sanctam, catholicam et apostolicam Ecclesiam. * Confiteor unum baptisma in remissionem peccatorum. * Et exspecto resurrectionem mortuorum. Et vitam (+) venturi saeculi. Amen.}
 		\polW{Ojca wszechmogącego, Stworzyciela nieba i ziemi, wszystkich rzeczy widzialnych i niewidzialnych. I w jednego Pana Jezusa Chrystusa, Syna Bożego jednorodzonego, który z Ojca jest zrodzony przed wszystkimi wiekami. Bóg z Boga, Światłość ze Światłości. Bóg prawdziwy z Boga prawdziwego. Zrodzony a nie stworzony, współistotny Ojcu, a przez Niego wszystko się stało. On to dla nas ludzi i dla naszego zbawienia zstąpił z niebios. (PRZYKLEKNĄĆ) I ZA SPRAWĄ DUCHA ŚWIĘTEGO PRZYJĄŁ CIAŁO Z MARYI DZIEWICY I STAŁ SIĘ CZŁOWIEKIEM. Ukrzyżowany również za nas, pod Poncjuszem Piłatem został umęczony i pogrzebany. I zmartwychwstał dnia trzeciego, jak oznajmia Pismo. I wstąpił do nieba, siedzi po prawicy Ojca. I powtórnie przyjdzie w chwale sądzić żywych i umarłych, a Królestwu Jego nie będzie końca. Wierzę w Ducha Świętego, Pana i Ożywiciela, który od Ojca i Syna pochodzi, który z Ojcem i Synem wspólnie odbiera uwielbienie i chwałę, który mówił przez Proroków. Wierzę w jeden, święty, powszechny i apostolski Kościół. Wyznaję jeden chrzest na odpuszczenie grzechów. I oczekuję wskrzeszenia umarłych i życia wiecznego (+) w przyszłym świecie. Amen.}
-	\end{parcolumns}
+	\end{clsLt}
 
 	
 	\chapter{MSZA WIERNYCH}
@@ -341,7 +345,7 @@
 	\section{CZĘŚĆ PIERWSZA}
 	
 	\subsection{Offertorium --- Ofertorium}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\rub{Kapłan całuje ołtarz i pozdrawia wiernych wzywając wszystkich do modlitwy.}
 		
 		\latinS{Dominus vobiscum.}
@@ -352,36 +356,36 @@
 		\polK{Módlmy się}
 		
 		\rub{Podczas ofiarowania chór śpiewa antyfonę offertorium z danego dnia. We Mszach cichych kapłan sam ją odmawia. W chwili ofiarowania oddajmy Panu Jezusowi całe nasze życie, wszystkie poczynania, troski i radości; niech On złoży te dary nasze przed Tronem Bożym w niebie.}
-	\end{parcolumns}
+	\end{clsLt}
 
 	\subsection{Ofiarowanie Chleba}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\rub{Kapłan odkrywa kielich, ministrant dzwoni. Następnie wznosząc patenę kapłan ofiarowuje chleb.}
 		
 		\latin{Suscipe, sancte Pater, omnipotens aeterne Deus, hanc immaculatam hostiam, quam ego indignus famulus tuus offero tibi Deo meo, vivo et vero, pro innumerabilibus peccatis et offensionibus et negligentiis meis, et pro omnibus circumstantibus, sed et pro omnibus fidelibus Christianis vivis atque defunctis: ut mihi, et illis proficiat ad salutem in vitam aeternam. Amen.}
 		\pol{Przyjmij, Ojcze święty, wszechmocny, wiekuisty Boże, tę hostię niepokalaną, którą ja niegodny sługa Twój, ofiarowuje Tobie, Bogu mojemu żywemu i prawdziwemu, za niezliczone grzechy, zniewagi i niedbalstwa moje, za wszystkich tu obecnych, a także za wszystkich wiernych Chrześcijan, żywych i umarłych, aby mnie i im posłużyła do zbawienia w życiu wiekuistym. Amen.}
 
 		\rub{Czyniąc pateną znak krzyża, kapłan składa chleb na ołtarzu.}
-	\end{parcolumns}
+	\end{clsLt}
 	
 	\subsection{Przygotowanie wina i wody}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\rub{Ministranci przynoszą ampułki z winem i wodą. Kapłan przeszedłszy na stronę Lekcji wlewa do kielicha wino i kilka kropel wody, którą błogosławi (za wyjątkiem Mszy żałobnych). To połączenie wina i wody czyni na pamiątkę krwi i wody, którą spłynęła z boku Chrystusa. Woda jest też symbolem wiernych, którzy wraz z Chrystusem, głową Kościoła, są złączeni jak woda z winem i z Nim ofiarowują się Bogu Ojcu.}
 		
 		\latin{Deus, qui humanae substantiae dignitatem mirabiliter condidisti, et mirabilius reformasti: da nobis per huius aquae et vini mysterium, eius divinitatis esse consortes, qui humanitatis nostrae fieri dignatus est particeps, Jesus Christus, Filius tuus, Dominus noster: Qui tecum vivit et regnat in unitate Spiritus Sancti Deus; per omnia saecula saeculorum. Amen.}
 		\pol{Boże, któryś godność natury ludzkiej, przedziwnie stworzył i jeszcze przedziwnej naprawił, spraw przez tę tajemnicę wody i wina, abyśmy mieli uczestnictwo w Bóstwie Tego, który raczył stać się uczestnikiem człowieczeństwa naszego, Iezus Chrystus, Syn Twój, Pan nasz, który z Tobą żyje i króluje w jedności Ducha Świętego Bóg: przez wszystkie wieki wieków. Amen.}
-	\end{parcolumns}
+	\end{clsLt}
 	
 	\subsection{Ofiarowanie wina}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\rub{Na środku ołtarza, kapłan podnosi kielich, a następnie czyni nim znak krzyża nad ołtarzem.}
 		
 		\latin{Offerimus tibi, Domine, calicem salutaris, tuam deprecantes clementiam: ut in conspectu divinae majestatis tuae, pro nostra et totius mundi salute, cum odore suavitatis ascendat. Amen.}
 		\pol{Ofiarujemy Ci, Panie, kielich zbawienia, Twojej żebrząc łaskawości, aby jako wonność wdzięczną wzniósł się przed oblicze Twego Boskiego Majestatu za nasze i całego świata zbawienie. Amen.}
-	\end{parcolumns}
+	\end{clsLt}
 	
 	\subsection{Polecenie ofiar}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\rub{Kapłan pochylony odmawia modlitwę Azariasza w piecu gorejącym (Dn 3, 39-40)}
 		
 		\latin{In spiritu humilitatis, et in animo contrito suscipiamur a te, Domine: et sic fiat sacrificium nostrum in conspectu tuo hodie, ut placeat tibi, Domine Deus.}
@@ -391,10 +395,10 @@
 		
 		\latin{Veni, sanctificator omnipotens aeterne Deus, et (+) benedic hoc sacrificium, tuo sancto nomini praeparatum.}
 		\pol{Przyjdź, Dawco świętości, wszechmogący wiekuisty Boże, i pobłogosław (+) tę ofiarę przygotowaną dla chwały świętego Imienia Twojego.}
-	\end{parcolumns}
+	\end{clsLt}
 
 	\subsection{Okadzenie (tylko w mszach uroczystych)}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\rub{We Mszach uroczystych kapłan okadza dary ofiarne i ołtarz. Błogosławiąc kadzidło kapłan mówi:}
 		
 		\latin{Per intercessionem beati Michaelis Archangeli, stantis a dextris altaris incensi, et omnium electorum suorum, incensum istud dignetur Dominus bene + dicere, et in odorem suavitatis accipere. Per Christum, Dominum nostrum. Amen.}
@@ -414,10 +418,10 @@
 		
 		\latin{Accendat in nobis Dominus ignem sui amoris, flammam aeternae caritatis. Amen.}
 		\pol{Niech Pan zapali w nas ogień swej miłości i płomień wiecznego ukochania. Amen.}
-	\end{parcolumns}
+	\end{clsLt}
 	
 	\subsection{Lavabo --- Umycie rąk}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\rub{Ministranci przynoszą utensylia do Lavabo. Kapłan po okadzeniu lub zaraz po poleceniu ofiar przechodzi na stronę Lekcji i umywa palce rąk. Jest to przypomnienie, że należy obudzić skruchę, aby móc przystąpić do ofiary z duszą czystą.}
 		
 		\negr{Psalm 25}
@@ -426,18 +430,18 @@
 		\pol{Umywam ręce na znak niewinności: I obchodzę ołtarz Twój Panie. Ażeby śpiewać głośno chwałę Twoją, Aby wysławiać wszystkie cuda Twoje. Umiłowałem, Panie, piękność domu Twego, Stałe mieszkanie Twego Majestatu. Nie trąc mnie, Boże, razem z grzesznikami, Ni życia mego z mężami krwawymi. Ich ręce bowiem splamione zbrodniami, Prawica pełna zapłaty przekupstwa. Ja zaś swe życie wiodę w uczciwości, Ratuj mnie przeto, bądź mi litościwy. Nogi moje stoją na gruncie bezpiecznym: Pragnę Cię chwalić w gronie sług Twoich, Panie. Chwała Ojcu.}
 		
 		\rub{,,Gloria Patri'' opuszcza się w okresie Męki Pańskiej i w Mszach żałobnych. }
-	\end{parcolumns}
+	\end{clsLt}
 	
 	\subsection{Polecenie ofiar Trójcy Świętej}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\rub{Kapłan pochylony na środku ołtarza, mówi:}
 		
 		\latinS{Suscipe sancta Trinitas hanc oblationem, quam tibi offerimus ob memoriam passionis, resurrectionis et ascensionis Iesu Christi, Domini nostri: et in honorem beatae Mariae semper virginis, et beati Ioannis Baptistae, et sanctorum Apostolorum Petri et Pauli, et istorum, et omnium Sanctorum: ut illis proficiat ad honorem, nobis autem ad salutem: et illi pro nobis intercedere dignentur in coelis, quorum memoriam agimus in terris. Per eumdem Christum, Dominum nostrum. Amen.}
 		\polK{Przyjmij, Trójco Święta, tę ofiarę, którą Ci składamy na pamiątkę Męki, Zmartwychwstania i Wniebowstąpienia Jezusa Chrystusa, Pana naszego, oraz na cześć Najświętszej Maryi Zawsze Dziewicy, świętego Jana Chrzciciela, świętych Apostołów Piotra i Pawła, a także tych (których szczątki są w ołtarzu) i wszystkich świętych: niech posłuży im ku chwale, nam zaś pomoże do zbawienia; niechaj ci, których ze czcią wspominamy na ziemi, raczą orędować za nami w niebie: przez tegoż Chrystusa, Pana Naszego. Amen.}
-	\end{parcolumns}
+	\end{clsLt}
 	
 	\subsection{Wezwanie do modlitwy i Sekreta}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\rub{Kapłan całuje ołtarz i zwraca się do wiernych prosząc o szczególne skupienie i zjednoczenie w modlitwie.}
 		
 		\latinS{Orate, fratres: ut meum ac vestrum sacrificium acceptabile fiat apud Deum Patrem omnipotentem.}
@@ -459,13 +463,13 @@
 		\polK{Przez wszystkie wieki wieków.}
 		\latinM{Amen}
 		\polW{Amen}
-	\end{parcolumns}
+	\end{clsLt}
 	
 	\cleardoublepage
 	\section{CZĘŚĆ DRUGA}
 	
 	\subsection{Prefacja czyli Przedśpiew}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\negr{Dialog przed Prefacją}
 		
 		\latinS{Dominus vobiscum.}
@@ -477,7 +481,7 @@
 		\latinM{Habemus ad Dominum.}
 		\polW{Wznieśliśmy je ku Panu.}
 		\latinS{Gratias agamus Domino, Deo nostro.}
-		\polK{\rub{(Pochylając głowę)}Dzięki składajmy Panu Bogu naszemu.}
+		\polK{\textcolor{red}{(Pochylając głowę)} Dzięki składajmy Panu Bogu naszemu.}
 		\latinM{Dignum et iustum est.}
 		\polW{Godne to i sprawiedliwe.}
 		
@@ -487,10 +491,10 @@
 		
 		\latinS{Vere dignum et iustum est, aequum et salutare, nos tibi semper, et ubique gratias agere: Domine sancte, Pater omnipotens, aeterne Deus. Qui cum unigenito Filio tuo, et Spiritu Sancto, unus es Deus, unus es Dominus: non in unius singularitate personae, sed in unius Trinitate substantiae. Quod enim de tua gloria, revelante te, credimus, hoc de Filio tuo, hoc de Spritu Sancto, sine differentia discretionis sentimus. Ut in confessione verae, sempiternaeque Deitatis, et in personis proprietas, et in essentia unitas, et in majestate adoretur aequalitas. Quam laudant Angeli, atque Archangeli, Cherubim quoque ac Seraphim: qui non cessant clamare cotidie, una voce dicentes:}
 		\polK{Prawdziwie jest to godnie i sprawiedliwie, słusznie i zbawiennie, abyśmy zawsze i wszędzie dzięki Tobie czynili, Panie święty, Ojcze wszechmogący, wiekuisty Boże; Ty z jednorodzonym Synem Twoim i Duchem Świętym jeden jesteś Bóg, jeden Pan, nie jednością jedynej osoby, ale w trzech Osobach jednej Istoty. Co bowiem z objawienia Twego wierzymy o Twojej chwale, toż o Synu, to i o Duchu Świętym, bez żadnej różnicy utrzymujemy; tak, iż wyznając prawdziwie i wiekuiste Bóstwo, wielbimy Osób odrębność, w Istocie jedność i równość w Majestacie. Co też wychwalają Aniołowie i Archaniołowie, Cherubiny i Serafiny, którzy nie przestają wołać codziennie, mówiąc jednogłośnie:}
-	\end{parcolumns}
+	\end{clsLt}
 	
 	\subsection{Sanctus --- Święty}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\rub{Kapłan pochyla się i mówi, a ministrant trzykroć dzwoni}
 		
 		\latinS{Sanctus, Sanctus, Sanctus, Dominus Deus Sabaoth. Pleni sunt caeli et terra gloria tua. Hosanna in excelsis.}
@@ -500,19 +504,18 @@
 		
 		\latin{Benedictus qui venit in nomine Domini. Hosanna in excelsis.}
 		\pol{Błogosławiony, który idzie w imię Pańskie. Hosanna na wysokości.}
-	\end{parcolumns}
+	\end{clsLt}
 	
-	\clearpage
-	
+	\cleartoleftpage
 	\begin{figure}[h]
 		\includegraphics{cross.png}
 	\end{figure}
-	\clearpage
+	\cleardoublepage
 	\section{KANON MSZY ŚWIĘTEJ}
 	\rub{Modlitwy Kanonu, którego pochodzenie sięga pierwszych wieków Kościoła, odzwierciedlają dokładnie myśl Apostołów i Zbawiciela. Dlatego powinniśmy z wielką czcią i radością odmawiać z kapłanem te modlitwy, które uświęciła tak starodawna tradycja.}
 	
 	\subsection{(Pierwsza) modlitwa wstawiennicza}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\rub{Kapłan ogólnie poleciwszy ofiarę wstawia się (a) za cały Kościół wojujący (b) za biorących udział w Ofierze (c) w łączności z Kościołem tryumfującym. "Naprzód należy polecić ofiary i wtedy wygłosić imiona tych, których należy" (św. Innocenty I 417). Imiona odczytywano z tabliczek zwanych dyptychami. Wypisywano na nich imiona żywych i umarłych, których polecano modlitwom wiernych, oraz imiona świętych, których przy ofierze w dniu danym wspominano.}
 		
 		\negr{Te Igitur --- ogólne polecenie ofiar}
@@ -534,26 +537,26 @@
 		
 		\latinS{Communicantes, et memoriam venerantes, in primis gloriosae semper virginis Mariae, Genitricis Dei et Domini nostri Iesu Christi: sed {et beati Ioseph, eiusdem virginis Sponsi} et beatorum Apostolorum ac Martyrum tuorum, Petri et Pauli, Andreae, Iacobi, Ioannis, Thomae, Iacobi, Philippi, Bartholomaei, Matthaei, Simonis et Thaddaei: Lini, Cleti, Clementis, Xysti, Cornelii, Cypriani, Laurentii, Chrysogoni, Ioannis et Pauli, Cosmae et Damiani, et omnium sanctorum tuorum: quorum meritis precibusque concedas, ut in omnibus protectionis tuae muniamur auxilio. Per eumdem Christum Dominum nostrum. Amen.}
 		\polK{W świętym obcowaniu, ze czcią wspominamy przede wszystkim wsławioną zawsze Dziewicę Maryję, Rodzicę Boga, Pana naszego, Jezusa Chrystusa, a także Świętych Apostołów i Męczenników Twoich: (Apostołów) Piotra i Pawła, Andrzeja, Jakuba Jana, Tomasza, Jakuba, Filipa, Bartłomieja, Mateusza, Szymona, i Tadeusza, (Papieży) Linusa, Kleta, Klemensa, Ksystusa, Korneliusza, (Męczenników Cypriana, Wawrzyńca, Chryzogona, Jana i Pawła, Kosmę i Damiana, i wszystkich Świętych Twoich: racz dla ich zasług i modlitw wspierać nas w każdej potrzebie pomocą Swojej opieki. Przez tegoż Chrystusa, Pana naszego. Amen.}
-	\end{parcolumns}
+	\end{clsLt}
 	
 	\subsection{Hanc Igitur --- prośba o przyjęcie ofiary}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\rub{Kapłan wyciąga dłonie nad Hostią i kielichem, a gdy zaczyna błogosławić, ministrant dzwoni, wierni klękają.}
 		
 		\latin{Hanc igitur oblationem servitutis nostrae, sed et cunctae familiae tuae, quaesumus, Domine, ut placatus accipias: diesque nostros in tua pace disponas, atque ab aeterna damnatione nos eripi, et in electorum tuorum iubeas grege numerari. Per Christum Dominum nostrum. Amen.}
 		\pol{Prosimy Cię przeto, Panie, abyś tę ofiarę sług Twoich i całej rodziny Twojej miłościwie przyjął, dni życia naszego w pokoju swym ustalił i zechciał od wiecznego potępienia nas wybawić i zaliczyć w poczet wybranych Twoich. Przez Chrystusa, Pana naszego. Amen.}
-	\end{parcolumns}
+	\end{clsLt}
 	
 	\subsection{Quam Oblationem --- Prośba o przeistoczenie}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\rub{Kulminacyjnym punktem w Ofierze Mszy Świętej jest przeistoczenie chleba i wina w Ciało i Krew Pańską. Ofiara, które się spełnia na ołtarzu, jest tą ofiarą, która się dokonała na Kalwarii. Ten sam Kapłan i Ofiara ta sama. Wzbudźmy w sobie wiarę w obecność Chrystusa pod postaciami chleba i wina mówiąc po cichu, podczas podniesienia słowa św. Tomasza: Pan Bóg i Bóg mój. (7 lat odp. dla tych, co mówią codzień odp. zup. raz na tydzień pod zwykłymi warunkami. S. Pen. 26, I, 1937)}
 		
 		\latin{Quam oblationem tu, Deus, in omnibus, quaesumus benedictam (+), adscriptam (+), ratam (+), rationabilem, acceptabilemque facere digneris: ut nobis Corpus (+), et Sanguis (+) fiat dilectissimi Filii tui, Domini nostri Iesu Christi.}
 		\pol{Wsród wszystkich ofiar, prosimy Cię, Ty Boże, racz te pobło+gosławić, u+znać, za+twierdzić, prawdziwą i miłą sobie uczynić, tak, żeby stała się dla nas Cia+łem i Krwią (+) najmilszego Syna Twojego, Pana naszego, Jezusa Chrystusa.}
-	\end{parcolumns}
+	\end{clsLt}
 	
 	\subsection{Konsekracja chleba}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\rub{Kapłan bierze do rak Hostię}
 		
 		\latin{Qui pridie quam pateretur, accepit panem in sanctas ac venerabiles manus suas: et elevatis oculis in coelum ad te Deum Patrem suum omnipotentem, tibi gratias agens, benedixit (+), fregit, deditque discipulis suis, dicens: Accipite, et manducate ex hoc omnes:}
@@ -565,10 +568,10 @@
 		\pol{\textbf{TO JEST BOWIEM CIAŁO MOJE}}
 		
 		\rub{Gdy kapłan podnosi Hostię Najświętszą, ministrant dzwoni, a wierni adorują w ciszy.}
-	\end{parcolumns}
+	\end{clsLt}
 	
 	\subsection{Konsekracja wina}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\rub{Kapłan bierze do rąk Kielich.}
 		
 		\latin{Simili modo postquam coenatum est, accipiens et hunc praeclarum Calicem in sanctas ac venerabiles manus suas: item tibi gratias agens, bene + dixit, deditque discipulis suis, dicens: Accipite, et bibite ex eo omnes.}
@@ -583,26 +586,26 @@
 		\pol{To ile razy czynić będziecie, na moją czyńcie pamiątkę.}
 		
 		\rub{Gdy kapłan podnosi kielich, ministrant dzwoni. Wierni adorują w ciszy Krew Przenajświętszą}
-	\end{parcolumns}
+	\end{clsLt}
 	
 	\subsection{Unde Et Memores --- Wspomnienie Tajemnicy Odkupienia (Anamneza)}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\rub{Pamiątka Chrystusa, to nie tylko czcze wspomnienie, ale rzeczywiste uobecnienie całej Tajemnicy Odkupienia --- co też podkreśla natychmiast kapłan w następnej modlitwie zwanej "anamneza" czyli "wspomnienie".}
 		
 		\latinS{Unde et memores Domine, nos servi tui, sed et plebs tua sancta, eiusdem Christi Filii tui Domini nostri, tam beatae passionis, nec non et ab inferis resurrectionis, sed et in caelos gloriosae ascensionis: offerimus praeclarae majestati tuae de tuis donis ac datis, hostiam (+) puram, hostiam (+) sanctam, hostiam (+) immaculatam, Panem (+) sanctum vitae aeternae, et Calicem (+) salutis perpetuae.}
 		\polK{Przeto i my słudzy Twoi, Panie, oraz lud Twój święty, wspominając tak błogosławioną Mękę, jak też i Zmartwychwstanie z otchłani i chwalebne Wniebowstąpienie tegoż Chrystusa, Syna Twojego, Pana naszego, ofiarujemy przedostojnemu Majestatowi Twojemu, z darów i dobrodziejstw Twoich, Hostię (+) czystą, Hostię (+) świetą, Hostię (+) Niepokalaną, Chleb (+) święty wiekuistego życia i Kielich (+) zbawienia wiecznego.}
-	\end{parcolumns}
+	\end{clsLt}
 	
 	\subsection{Supra Quae --- Modlitwa o przyjęcie Ofiary bezkrwawej}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\rub{Bóg łaskawie przyjął ofiary Starego Zakonu, które były tylko figurą Ofiary Chrystusa; o ile bardziej przychylnie raczy wejrzeć na ofiarę Nowego Przymierza.}
 		
 		\latinS{Supra quae propitio ac sereno vultu respicere digneris: et accepta habere, sicuti accepta habere dignatus es munera pueri tui iusti Abel, et sacrificium patriarchae nostri Abrahae: et quod tibi obtulit summus sacerdos tuus Melchisedech, sanctum sacrificium, immaculatam hostiam.}
 		\polK{Racz na nie wejrzeć przejednanym i łaskawym obliczem i przyjąć je tak mile, jak mile przyjąć raczyłeś dary sprawiedliwego sługi Twego Abla i ofiarę Patryjarchy naszego Abrahama i tę, którą Ci złożył najwyższy Twój Kapłan Melchizedek, ofiarę świętą, hostię niepokalaną.}
-	\end{parcolumns}
+	\end{clsLt}
 	
 	\subsection{Druga modlitwa wstawiennicza}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\rub{Kapłan pochylony nad ołtarzem, modli się o łaski dla uczestników Ofiary. Owym aniołem, który ma ofiarę przedstawić jest sam Chrystus. Według innych jest nim Duch Święty lub jakiś anioł ofiarnik. }
 		
 		\negr{Supplices --- za uczestników Ofiary}
@@ -621,10 +624,10 @@
 		
 		\latin{Nobis quoque peccatoribus famulis tuis, de multitudine miserationum tuarum sperantibus, partem aliquam et societatem donare digneris, cum tuis sanctis Apostolis et Martyribus: cum Ioanne, Stephano, Matthia, Barnaba, Ignatio, Alexandro, Marcellino, Petro, Felicitate, Perpetua, Agatha, Lucia, Agnete, Caecilia, Anastasia, et omnibus sanctis tuis: intra quorum nos consortium, non aestimator meriti, sed veniae, quaesumus, largitor admitte. Per Christum Dominum nostrum.}
 		\pol{Nam także, grzesznym sługom Twoim, którzy pokładamy nadzieję w mnóstwie litości Twojej, racz dać jakiś udział i obcowanie ze świętymi Twoimi Apostołami i Męczennikami: Janem (Chrzcicielem), Szczepanem (Diakonem), Maciejem (Apostołem), Barnabą, Ignacym (Biskupem) Aleksandrem, Marcelinem, Piotrem, (Męczennice) Felicytą, Perpetuą, Agatą, Łucją, Agnieszką, Cecylią, Anastazją, i całym gronem Twych Świętych; dopuść nas, prosimy, do ich współdziedzictwa, nie z naszych zasług biorąc miarę, lecz przebaczeniem obdarzając Przez Chrystusa, Pana naszego.}
-	\end{parcolumns}
+	\end{clsLt}
 	
 	\subsection{Zakończenie}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\latin{Per quem haec omnia, Domine, semper bona creas, sanctificas (+), vivificas (+), benedicis (+) et praestas nobis.}
 		\pol{Przez Niego, Panie, te wszystkie dary zawsze dobrymi stwarzasz, uswię+casz, oży+wiasz, błogo+sławisz i nam ich udzielasz.}
 		
@@ -636,13 +639,13 @@
 		\polK{Przez wszystkie wieki wieków. }
 		\latinM{Amen.}
 		\polW{Amen.}
-	\end{parcolumns}
+	\end{clsLt}
 	
 	\cleardoublepage
 	\section{CZĘŚĆ TRZECIA}
 	
 	\subsection{Pater Noster --- Modlitwa Pańska}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\rub{Teraz po złożeniu Ofiary, następuje uczta. W odpowiedzi na nasze dary, prośby i błagania Bóg udzieli nam pokarmu świętego, w którym są zawarte wszystkie łaski i dobrodziejstwa, bo pokarm ten, to sam Pan Jezus pod postaciami chleba i wina. Jest to stwierdzenie, ze Bóg nas wysłuchał i chce nam dopomóc, jako swym dzieciom. Jako przygotowanie do Komunii św. odmówmy z głębi serca "Ojcze nasz" i prośmy Pana Jezusa, aby to Jego Ciało, które spożywać będziemy, stało się nam lekarstwem dla duszy i ciała.}
 		
 		\latinS{Oremus. Praeceptis salutaribus moniti, et divina institutione formati, audemus dicere:\\Pater noster, qui es in caelis, sanctificetur nomen tuum. Adveniat regnum tuum. Fiat voluntas tua, sicut in caelo et in terra. Panem nostrum quotidianum da nobis hodie. Et dimitte nobis debita nostra, sicut et nos dimittimus debitoribus nostris. Et ne nos inducas in tentationem.}
@@ -658,10 +661,10 @@
 		
 		\latin{Libera nos, quaesumus, Domine, ab omnibus malis, praeteritis, praesentibus et futuris: et intercedente beata et gloriosa semper Virgine Dei Genitrice Maria, cum beatis Apostolis tui Petro et Paulo, atque Andrea, et omnibus Sanctis, da propitius pacem in diebus nostris: ut, ope misericordiae tuae adiuti, et a peccato simus semper liberi et ab omni perturbatione securi. Per eumden Dominum nostrum Iesum Christum, Filium tuum. Qui tecum vivit et regnat in unitate Spiritus Sancti Deus. Per omnia saecula saeculorum. Amen.}
 		\pol{Wybaw nas, prosimy Cię, Panie od wszelkich nieszczęść przeszłych, obecnych i przyszłych, a za przyczyną Najświętszej i chwalebnej zawsze Dziewicy, Bogarodzicy Maryi, świętych Apostołów Twoich Piotra i Pawła, oraz Andrzeja i wszystkich Świętych, udziel nam miłościwie pokoju za dni naszych, abyśmy wsparci pomocą miłosierdzia Twego i od grzechu byli zawsze wolni i od wszelkiej trwogi bezpieczni. Przez tegoż Pana naszego Jezusa Chrystusa, Syna Twojego, który z Tobą żyje i króluje w jedności Ducha Świętego Bóg, przez wszystkie wieki wieków. Amen. }
-	\end{parcolumns}
+	\end{clsLt}
 	
 	\subsection{Łamanie Chleba i modły o pokój}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\rub{Obrzęd Łamania Chleba jest również symbolem gwałtownej śmierci Chrystusa, połączenie zaś Hostii z Krwią wskazuje na Jego zmartwychwstanie. Pierwszym owocem Eucharystii jest pokój, czyli jedność z Bogiem i jedność między nami.}
 		
 		\latinS{Per omnia saecula saeculorum.}
@@ -684,10 +687,10 @@
 		
 		\latinS{Agnus Dei, qui tollis peccata mundi, miserere nobis.\\Agnus Dei, qui tollis peccata mundi, miserere nobis.\\Agnus Dei, qui tollis peccata mundi, dona nobis pacem.}
 		\polK{Baranku Boży, który gładzisz grzechy świata, zmiłuj się nad nami.\\Baranku Boży, który gładzisz grzechy świata, zmiłuj się nad nami.\\Baranku Boży, który gładzisz grzechy świata, obdarz nas pokojem.}
-	\end{parcolumns}
+	\end{clsLt}
 	
 	\subsection{Modlitwy przed Komunią}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\rub{Następują trzy ciche prywatne modlitwy kapłana, pięknie przypominające skutki, jakie Komunia ma spowodować w duszach naszych: pokój, uzdrowienie, łaskę Bożą. Opieramy się w tej chwili na zasługach Chrystusa i wierze Kościoła.}
 		
 		\negr{Domine Iesus Christe I}
@@ -704,10 +707,10 @@
 		
 		\latin{Perceptio Corporis tui, Domine Iesu Christe, quod ego indignus sumere praesumo, non mihi proveniat in iudicium et condemnationem: sed pro tua pietate prosit mihi ad tutamentum mentis et corporis, et ad medelam percipiendam. Qui vivis et regnas cum Deo Patre in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen.}
 		\pol{Przyjęcie Ciała Twego, Panie Jezu Chryste, które ja, niegodny sługa, spożywać się ważę, niechaj mi się nie obróci na sąd i potępienie, lecz niechaj raczej posłuży mi ku obronie i uzdrowieniu duszy i ciała: który żyjesz i królujesz z Bogiem Ojcem w jedności Ducha Świętego Bóg, przez wszystkie wieki wieków. Amen.}
-	\end{parcolumns}
+	\end{clsLt}
 	
 	\subsection{Komunia kapłana}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\rub{Kapłan przyklęka, bierze do rąk Hostię św., aby ją przyjąć i mówi:}
 		
 		\latin{Panem caelestem accipiam et nomen Domini invocabo.}
@@ -727,10 +730,10 @@
 		
 		\latin{Quid retribuam Domino pro omnibus, quae retribuit mihi? Calicem salutaris accipiam, et nomen Domini invocabo. Laudans invocabo Dominum, et ab inicimcis meis salvus ero.\\Sanguis Domini nostri Jesu Christi custodiat animam meam in vitam aeternam. Amen.}
 		\pol{Cóż zwrócę Panu za wszystko, co dla mnie uczynił; Kielich zbawienia wezmę i wezwę Imienia Pana. Wielbiąc zawołam do Pana i od nieprzyjaciół moich będę ocalony.\\Krew Pana naszego Jezusa Chrystusa niechaj strzeże duszy mojej na żywot wieczny. Amen.}
-	\end{parcolumns}
+	\end{clsLt}
 	
 	\subsection{Komunia wiernych}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\rub{Kapłan zwraca się do wiernych z Cyborium i trzymając Hostię Świętą, mówi:}
 		
 		\latin{Ecce Agnus Dei, ecce Qui tollit peccata mundi.}
@@ -747,10 +750,10 @@
 		\pol{Ciało Pana naszego Jezusa Chrystusa niechaj strzeże duszy Twojej na żywot wieczny. Amen.}
 		
 		\rub{Gdy wszyscy otrzymali Komunie Świętą, kapłan powraca na ołtarz i umieszcza Cyborium w Tabernakulum. }
-	\end{parcolumns}
+	\end{clsLt}
 	
 	\subsection{Dziękczynienie}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\rub{Po czym ministrant bierze ampułki i nalewa wina do kielicha. Kapłan modli się:}
 		
 		\latin{Quod ore sumpsimus Domine, pura mente capiamus: et de munere temporali fiat nobis remedium sempiternum.}
@@ -762,13 +765,13 @@
 		\pol{Ciało Twe, Panie, które spożyłem, i Krew, którą wypiłem, niech przywrze do mego wnętrza, i spraw, aby zmaza grzechów nie została we mnie, którego czyste i święte posiliły Sakramenta. Który żyjesz i królujesz na wieki wieków. Amen.}
 		
 		\rub{Kapłan wyciera kielich i przykrywa go welonem. --- Ministrant przenosi Mszał. }
-	\end{parcolumns}
+	\end{clsLt}
 	
 	\subsection{Communio --- Śpiew przy Komunii}
 	\rub{Po czym kapłan przechodzi na stronę Lekcji i odczytuje Komunię.}
 	
 	\subsection{Postcommunio --- Modlitwy po Komunii}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\latinS{Dominus vobiscum.}
 		\polK{Pan z wami.}
 		\latinM{Et cum spiritu tuo.}
@@ -793,10 +796,10 @@
 		\polK{Idźcie, Msza się skończyła.}
 		\latinM{Deo gratias.}
 		\polW{Bogu niech będą dzięki.}
-	\end{parcolumns}
+	\end{clsLt}
 	
 	\subsection{Placeat Tibi --- Ostatnia modlitwa}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\rub{Pochylając się nad ołtarzem, kapłan mówi:}
 		
 		\latin{Placeat tibi, sancta Trinitas, obsequium servitutis meae: et praesta, ut sacrificium quod oculis tuae maiestatis indignus obtuli, tibi sit acceptabile, mihique, et omnibus pro quibus illud obtuli, sit te miserante propitiabile. Per Christum Dominum nostrum. Amen.}
@@ -810,10 +813,10 @@
 		\polK{Niech was błogosławi wszechmogący Bóg, Ojciec i Syn (+), i Duch Święty.}
 		\latinM{Amen.}
 		\polW{Amen.}
-	\end{parcolumns}
+	\end{clsLt}
 	
 	\subsection{Ostatnia Ewangelia}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\rub{Kapłan przechodzi na stronę Ewangelii. Czyni znak krzyża najpierw na ołtarzu, potem na swym czole, ustach i sercu.}
 		
 		\latinS{Dominus vobiscum.}
@@ -824,15 +827,15 @@
 		\polK{(+) Początek świętej Ewangelii według Świętego Jana.}
 		\latinM{Gloria tibi Domine.}
 		\polW{Chwała Tobie Panie.}
-		\latin{In prinicipio erat Verbum, et Verbum erat apud Deum, et Deus erat Verbum. Hoc erat in principio apud Deum. Omnia per ipsum facta sunt, et sine ipso factum est nihil, quod factum est. In ipso vita erat, et vita erat lux hominum: et lux in tenebris lucet, et tenebrae eam non comprehenderunt.\\Fuit homo missus a Deo, cui nomen erat Ioannes. Hic venit in testimonium, ut testimonium perhiberet de lumine, ut omnes crederent per illum. Non erat ille lux, sed ut testimonium perhiberet de lumine.\\Erat lux vera, quae illuminat omnem hominem venientem in hunc mundum. In mundo erat, et mundus per ipsum factus est, et mundus eum non cognovit. In propria venit, et sui eum non receperunt. Quotquot autem receperunt eum, dedit eis potestatem filios Dei fieri, his qui credunt in nomine eius. Qui non ex sanguinibus, neque ex voluntate carnis, neque ex voluntate viri, sed ex Deo nati sunt.\\\rub{(hic genuflectitur)} ET VERBUM CARO FACTUM EST, et habitavit in nobis et vidimus gloriam eius, gloriam quasi Unigeniti a Patre, plenum gratiae et veritatis.}
-		\pol{Na początku było Słowo, a Słowo było u Boga, a Bogiem było Słowo. Ono to było na początku u Boga. Wszystko przez nie się stało, a bez Niego nic się nie stało, co się stało. W Nim było życie, a Życie było Światłością ludzi, a Światłość w ciemnościach świeci, a ciemności Jej nie ogarnęły.\\Był człowiek posłany od Boga, a na imię mu było Jan. Ten przyszedł na świadectwo, aby świadectwo dąć o Światłości, aby przezeń wszyscy uwierzyli. Nie był on Światłością, ale miął świadczyć o Światłości.\\Było Światło prawdziwe, które oświeca każdego człowieka, gdy na ten świat przychodzi. Ono było na świecie, a świat przez nie został uczynion, a świat Go nie poznał. Do swego przyszło, a swoi Go nie przyjęli. Tym zaś wszystkim, którzy Go przyjęli, dało moc, by się stali synami Bożymi, tym co wierzą w Imię Jego, którzy nie ze krwi, ani z pożądliwości ciała, ani z woli męża, ale z Boga się narodzili.\\\rub{(tu wszyscy klękają)} A SŁOWO CIAŁEM SIĘ STAŁO i mieszkało między nami. I oglądaliśmy chwałę Jego, chwale jako Jednorodzonego od Ojca, pełnego łaski i prawdy.}
+		\latin{In prinicipio erat Verbum, et Verbum erat apud Deum, et Deus erat Verbum. Hoc erat in principio apud Deum. Omnia per ipsum facta sunt, et sine ipso factum est nihil, quod factum est. In ipso vita erat, et vita erat lux hominum: et lux in tenebris lucet, et tenebrae eam non comprehenderunt.\\Fuit homo missus a Deo, cui nomen erat Ioannes. Hic venit in testimonium, ut testimonium perhiberet de lumine, ut omnes crederent per illum. Non erat ille lux, sed ut testimonium perhiberet de lumine.\\Erat lux vera, quae illuminat omnem hominem venientem in hunc mundum. In mundo erat, et mundus per ipsum factus est, et mundus eum non cognovit. In propria venit, et sui eum non receperunt. Quotquot autem receperunt eum, dedit eis potestatem filios Dei fieri, his qui credunt in nomine eius. Qui non ex sanguinibus, neque ex voluntate carnis, neque ex voluntate viri, sed ex Deo nati sunt.\\\textcolor{red}{(hic genuflectitur)} ET VERBUM CARO FACTUM EST, et habitavit in nobis et vidimus gloriam eius, gloriam quasi Unigeniti a Patre, plenum gratiae et veritatis.}
+		\pol{Na początku było Słowo, a Słowo było u Boga, a Bogiem było Słowo. Ono to było na początku u Boga. Wszystko przez nie się stało, a bez Niego nic się nie stało, co się stało. W Nim było życie, a Życie było Światłością ludzi, a Światłość w ciemnościach świeci, a ciemności Jej nie ogarnęły.\\Był człowiek posłany od Boga, a na imię mu było Jan. Ten przyszedł na świadectwo, aby świadectwo dąć o Światłości, aby przezeń wszyscy uwierzyli. Nie był on Światłością, ale miął świadczyć o Światłości.\\Było Światło prawdziwe, które oświeca każdego człowieka, gdy na ten świat przychodzi. Ono było na świecie, a świat przez nie został uczynion, a świat Go nie poznał. Do swego przyszło, a swoi Go nie przyjęli. Tym zaś wszystkim, którzy Go przyjęli, dało moc, by się stali synami Bożymi, tym co wierzą w Imię Jego, którzy nie ze krwi, ani z pożądliwości ciała, ani z woli męża, ale z Boga się narodzili.\\\textcolor{red}{(tu wszyscy klękają)} A SŁOWO CIAŁEM SIĘ STAŁO i mieszkało między nami. I oglądaliśmy chwałę Jego, chwale jako Jednorodzonego od Ojca, pełnego łaski i prawdy.}
 		\latinM{Deo gratias.}
 		\polW{Bogu niech będą dzięki.}
-	\end{parcolumns}
+	\end{clsLt}
 	
 	\cleardoublepage
 	\section{MODLITWY PO KAŻDEJ CICHEJ MSZY ŚWIĘTEJ}
-	\begin{parcolumns}[colwidths={2=3 in},nofirstindent]{2}
+	\begin{clsLt}
 		\textit{Przez Ojca Św. Leona XIII przepisane}
 		
 		\rub{Po cichej Mszy Św., kapłan klęcząc u stopni ołtarza, mówi z wiernymi poniższe modlitwy. Zaleca się wiernym samodzielne odmawianie tych modlitw także po Mszach Św. uroczystych.}
@@ -871,7 +874,10 @@
 		\polK{Najswiętsze Serce Jezusa.}
 		
 		\latinM{Miserere nobis. (ter)}
-		\polW{Zmiłuj sią nad nami! (trzy razy)}
-	\end{parcolumns}
+		\polW{Zmiłuj się nad nami! (trzy razy)}
+	\end{clsLt}
+
+	\clearpage
+	\null
 
 \end{document}
