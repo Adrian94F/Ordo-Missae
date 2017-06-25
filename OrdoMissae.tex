@@ -70,11 +70,12 @@
 {\Large}           % before-code
 
 \usepackage{geometry}
-\newgeometry{tmargin=2.5cm, bmargin=2.5cm, lmargin=2.5cm, rmargin=2.5cm}
+\newgeometry{tmargin=2.5cm, bmargin=3cm, lmargin=2.5cm, rmargin=2.5cm}
 
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
+\cfoot{\thepage}
 \renewcommand{\headrulewidth}{0pt}
 
 \newcommand*\cleartoleftpage{%
@@ -507,6 +508,7 @@
 	\end{clsLt}
 	
 	\cleartoleftpage
+	\thispagestyle{empty}
 	\begin{figure}[h]
 		\includegraphics{cross.png}
 	\end{figure}
@@ -878,6 +880,7 @@
 	\end{clsLt}
 
 	\clearpage
+	\thispagestyle{empty}
 	\null
 
 \end{document}
